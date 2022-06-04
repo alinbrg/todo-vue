@@ -4,12 +4,12 @@ import HomeView from "../views/HomeView";
 
 const routes = [
 	{
-		path: "/about",
+		path: "/todo/about",
 		name: "About",
 		component: AboutView,
 	},
 	{
-		path: "/main",
+		path: "/todo/main",
 		name: "Home",
 		component: HomeView,
 	},

@@ -2,8 +2,8 @@
 	<header class="header">
 		<h1>TodoList</h1>
 		<nav id="nav" class="nav-container">
-			<router-link to="/main">Home</router-link>
-			<router-link to="/about">About</router-link>
+			<router-link to="/todo/main">Home</router-link>
+			<router-link to="/todo/about">About</router-link>
 		</nav>
 	</header>
 </template>
