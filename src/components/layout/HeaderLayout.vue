@@ -2,7 +2,7 @@
 	<header class="header">
 		<h1>TodoList</h1>
 		<nav id="nav" class="nav-container">
-			<router-link to="/">Home</router-link>
+			<router-link to="/main">Home</router-link>
 			<router-link to="/about">About</router-link>
 		</nav>
 	</header>
