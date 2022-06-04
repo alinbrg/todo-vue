@@ -1,6 +1,14 @@
 <template>
 	<div>
-		<form @submit.prevent="addTodo">
+		<form
+			@submit.prevent="
+				$emit('add-todo', {
+					title: this.title,
+					completed: false,
+				});
+				this.title = '';
+			"
+		>
 			<input
 				type="text"
 				v-model="title"
@@ -13,7 +21,6 @@
 </template>
 
 <script>
-import uuid from "../../node_modules/uuid";
 export default {
 	name: "AddTodoComp",
 	data() {
@@ -22,21 +29,7 @@ export default {
 		};
 	},
 
-	method: {
-		addTodo() {
-			console.log("prevent");
-			const newTodo = {
-				id: uuid.v4(),
-				title: this.title,
-				completed: false,
-			};
-
-			this.$emit("add-todo", newTodo);
-
-			this.title = "";
-		},
-	},
-	emits: ["add-todo"],
+	method: {},
 };
 </script>
 

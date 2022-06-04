@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<HeaderView />
-		<AddTodoComp @add-todo="addTodo" />
+		<AddTodoComp @add-todo="addNewTodo" />
 		<TodosComp :todos="todos" @del-todo="deleteTodo" />
 	</div>
 </template>
@@ -10,7 +10,7 @@
 import HeaderView from "./components/layout/HeaderView";
 import TodosComp from "./components/TodosComp";
 import AddTodoComp from "./components/AddTodoComp";
-
+import { v4 as uuidv4 } from "../node_modules/uuid";
 export default {
 	name: "app",
 	components: {
@@ -45,9 +45,11 @@ export default {
 				return todo.id !== id;
 			});
 		},
-		addTodo(newTodo) {
-			console.log(newTodo);
-			// this.todos = [...this.todos, newTodo];
+		addNewTodo(addTodoObj) {
+			const newTodo = addTodoObj;
+			newTodo.id = uuidv4();
+
+			this.todos = [...this.todos, newTodo];
 		},
 	},
 };
