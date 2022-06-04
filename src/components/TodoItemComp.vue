@@ -38,7 +38,7 @@ export default {
 	color: #fff;
 	border: none;
 	padding: 5px 9px;
-	border-radius: 50%;
+	border-radius: 4px;
 	cursor: pointer;
 	margin-left: auto;
 }

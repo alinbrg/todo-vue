@@ -1,14 +1,15 @@
 <template>
-	<div id="nav" class="nav-container">
-		<router-link to="/">Home</router-link> |
-		<router-link to="/about">About</router-link>
-	</div>
+	<HeaderLayout />
 	<router-view />
 </template>
 
 <script>
+import HeaderLayout from "./components/layout/HeaderLayout";
 export default {
 	name: "App",
+	components: {
+		HeaderLayout,
+	},
 };
 </script>
 <style>
@@ -24,17 +25,26 @@ body {
 .container {
 	max-width: 1200px;
 	width: 100%;
-	margin: 0 auto;
+	margin: 30px auto 0;
 	padding: 0 15px;
 }
 .nav-container {
 	text-align: center;
-	padding: 10px;
-	background: #c966c0;
+
 	color: white;
 }
 a {
 	color: white;
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition: all 0.3s;
+	text-align: center;
+}
+a:first-child {
+	margin-right: 20px;
+}
+a:hover {
+	border-bottom: 1px solid white;
 }
 .btn {
 	display: inline-block;

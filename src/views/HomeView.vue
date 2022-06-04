@@ -1,6 +1,5 @@
 <template>
 	<div class="container">
-		<HeaderLayout />
 		<AddTodoComp @add-todo="addNewTodo" />
 		<TodosComp :todos="todos" @del-todo="deleteTodo" />
 	</div>
@@ -8,14 +7,12 @@
 </template>
 
 <script>
-import HeaderLayout from "../components/layout/HeaderLayout";
 import TodosComp from "../components/TodosComp";
 import AddTodoComp from "../components/AddTodoComp";
 // import { v4 as uuidv4 } from ".../node_modules/uuid";
 export default {
 	name: "HomeView",
 	components: {
-		HeaderLayout,
 		AddTodoComp,
 		TodosComp,
 	},
